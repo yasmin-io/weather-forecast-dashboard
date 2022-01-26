@@ -5,6 +5,10 @@ var searchForm = document.querySelector(".search-form");
 var citySearched = document.querySelector("#city-searched");
 
 function getCurrentAndForecast(lat, lon) {
+  // Url for OpenWeather API Call
+  // Using Lat and Lon variables from the 'getCityCoordinates' function.
+  // This function dynamically uses information for the API call to work.
+  // To avoid Over-Fetching I excluded = Minutely, Hourly and Alerts.
   var urlForInfo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${APIkey}`;
 
   fetch(urlForInfo)
@@ -13,15 +17,10 @@ function getCurrentAndForecast(lat, lon) {
     })
     .then(function (responseData) {
       console.log(responseData);
+      //   first -> get the current weather to display
+
+      // then you can worry about getting the future forecast to display
     });
-  //use lat and lon to get current and future weather
-  //var urlForCurrentAndForecast = ""
-  // variable above will use the paramters lat and lon + the API Key and anything we exclude
-  //fetch(var urlForCurrentAndForecast).then(){
-  // return response.json();}???
-  //.the ( function (
-  //   first -> get the current weather to display
-  // then you can worry about getting the future forecast to display
 }
 function getCityCoordinates(city) {
   var urlForCoords = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;

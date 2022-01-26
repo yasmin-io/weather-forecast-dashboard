@@ -5,9 +5,15 @@ var searchForm = document.querySelector(".search-form");
 var citySearched = document.querySelector("#city-searched");
 
 function getCurrentAndForecast(lat, lon) {
-  var urlForCoords = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily&appid={API key}`;
+  var urlForInfo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${APIkey}`;
 
-  console.log(urlForCoords);
+  fetch(urlForInfo)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (responseData) {
+      console.log(responseData);
+    });
   //use lat and lon to get current and future weather
   //var urlForCurrentAndForecast = ""
   // variable above will use the paramters lat and lon + the API Key and anything we exclude
@@ -33,6 +39,7 @@ function getCityCoordinates(city) {
     });
 }
 function getWeatherDetails(event) {
+  // If nothing gets clicked, create an if statement for if nothing is entered an alert pops up!
   console.log(event);
   event.preventDefault();
 

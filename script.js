@@ -3,12 +3,15 @@ var APIkey = "c337b3a4723bde09488f1f166a5cac8c";
 
 var searchForm = document.querySelector(".search-form");
 var citySearched = document.querySelector("#city-searched");
+var weatherDisplay = document.querySelector(".today");
+
+var today = moment().format("L");
 
 function getCurrentAndForecast(lat, lon) {
   // Url for OpenWeather API Call
   // Using Lat and Lon variables from the 'getCityCoordinates' function.
   // This function dynamically uses information for the API call to work.
-  // To avoid Over-Fetching I used the parameter excude to remove = Minutely, Hourly and Alerts.
+
   var urlForInfo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${APIkey}`;
 
   fetch(urlForInfo) // This is initiating the data request to get the information we will use to display for the user.
@@ -19,7 +22,21 @@ function getCurrentAndForecast(lat, lon) {
       console.log(responseData);
       //  Current Weather Display
 
-      // Forecast Display
+      // Current City to display as a title above weather.
+      // Create variables and elements for the information we want to display.
+      var userInput = citySearched.value.trim();
+      var currentCityTitle = document.createElement("h2");
+
+      // Ammend information and attributes to the Element.
+      // This is adding the users input and Current date (Using moment.js) to the h2 element.
+      currentCityTitle.textContent = userInput + " " + today;
+      // The current weather display title has an id of 'currentTitle'.
+      currentCityTitle.setAttribute("id", "currentTitle");
+
+      // Append the Html selector to the variable cityTitle that holds the information.
+      weatherDisplay.appendChild(currentCityTitle);
+
+      // Getting Current Date using moment.js, as the API Url I am using does not provide a date.
     });
 }
 

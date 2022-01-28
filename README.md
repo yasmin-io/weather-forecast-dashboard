@@ -2,7 +2,7 @@
 
 ---
 
-I am currently working on building an application for users to view the weather outlook in multiple cities in the `West Midlands`, `United Kingdom`. In my project, I am achieving this by practicing my use of `Third-party APIs` to access the necessary data and functionality. I will be making requests with specific parameters to [OpenWeather](https://openweathermap.org/api) API then using the return to display and update the correct weather information on my website. This is a challenging project for me however, it will also allow me to expand my knowledge in areas I am weak in such as: `Local Storage to build a history search list`.
+I am currently working on building an application for users to view the weather outlook in multiple cities in the `West Midlands`, `United Kingdom`. In my project, I am achieving this by practicing my use of `Third-party APIs` to access the necessary data and functionality. I will be making requests with specific parameters to [OpenWeather](https://openweathermap.org/api) API then using the return to display and update the correct weather information on my website. The way I am building this, I will need to use [Moment.js](https://momentjs.com/) to display the date as the data URL I chose to use made it easier to receive daily information, however it dosn't come with a date. This is a challenging project for me however, it will also allow me to expand my knowledge in areas I am weak in such as: `Local Storage to build a history search list`.
 
 ## Tasks
 

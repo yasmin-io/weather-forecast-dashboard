@@ -29,7 +29,8 @@ function getCityCoordinates(city) {
   // Api Link that uses the 'city' variable from getWeatherDetails function
   // & APIkey variable from the global scope.
   // This is the url that will retrieve the information necessary.
-  var urlForCoords = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
+  // By adding ',GB' to the URL we are restricting the return to Great Britain only.
+  var urlForCoords = `https://api.openweathermap.org/data/2.5/weather?q=${city},GB&appid=${APIkey}`;
 
   // Fetch function begins the request for information.
   fetch(urlForCoords)

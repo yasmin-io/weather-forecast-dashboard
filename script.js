@@ -23,6 +23,7 @@ function getCurrentAndForecast(lat, lon) {
     });
 }
 function getCityCoordinates(city) {
+  // Api Link
   var urlForCoords = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
 
   fetch(urlForCoords)
@@ -38,12 +39,17 @@ function getCityCoordinates(city) {
     });
 }
 function getWeatherDetails(event) {
-  // If nothing gets clicked, create an if statement for if nothing is entered an alert pops up!
-  console.log(event);
   event.preventDefault();
 
-  var city = citySearched.value.trim();
-  getCityCoordinates(city);
+  // Setting the user's search as a variable and removing any spaces.
+  // We will then use this information in the next function by passing it through as a parameter.
+  if (citySearched.value) {
+    var city = citySearched.value.trim();
+    getCityCoordinates(city);
+  } else {
+    // If the user clicks search without entering a city, they will get an alert pop up.
+    alert("Please Search a city!");
+  }
 }
 
 //local storage function saveHisory

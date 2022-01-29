@@ -71,6 +71,20 @@ function getCurrentAndForecast(lat, lon) {
       currentHumidity.setAttribute("id", "currentHumidity");
 
       weatherDisplay.appendChild(currentHumidity);
+
+      // UV Index
+      var uvData = responseData.current.uvi;
+      var currentUv = document.createElement("p");
+
+      currentUv.textContent = "UV Index: " + uvData;
+      currentUv.setAttribute("id", "currentUv");
+
+      weatherDisplay.appendChild(currentUv);
+
+      // Alter the UV Index Color based on the conditions.
+      if (uvData <= 3) {
+        console.log("YAY ITS LOW");
+      }
     });
 }
 

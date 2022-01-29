@@ -49,7 +49,7 @@ Future Tests (Bugs & Fixes)
 
 - [OpenWeather](https://openweathermap.org/api) One Call API
 - [BootStrap](https://getbootstrap.com/)
-- Full-Stack [Blog](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys) on how to use API keys.
-- West Midlands: [full-list](https://www.city-town.uk/metropolitan-county-west-midlands.html) of cities and towns
+- Full-Stack [Blog](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys) on how to use API keys
+- UV Index [Scale](https://19january2017snapshot.epa.gov/sunsafety/uv-index-scale-1_.html)
 
 Copyright © [2021] [Yasmin A]

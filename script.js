@@ -5,14 +5,17 @@ var searchForm = document.querySelector(".search-form");
 var citySearched = document.querySelector("#city-searched");
 var weatherDisplay = document.querySelector(".today");
 
+// Moment.js to display dates as the API url I chose was simpler than others,
+// however didn't provide a date with the return.
 var today = moment().format("L");
 
 function getCurrentAndForecast(lat, lon) {
   // Url for OpenWeather API Call
   // Using Lat and Lon variables from the 'getCityCoordinates' function.
   // This function dynamically uses information for the API call to work.
+  // Parameters exclude minutley, hourly and alerts. Have Temperature units in metric.
 
-  var urlForInfo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${APIkey}`;
+  var urlForInfo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${APIkey}`;
 
   fetch(urlForInfo) // This is initiating the data request to get the information we will use to display for the user.
     .then(function (response) {
@@ -20,15 +23,15 @@ function getCurrentAndForecast(lat, lon) {
     })
     .then(function (responseData) {
       console.log(responseData);
-      //  Current Weather Display
+      //  City & Date Display
 
-      // Current City to display as a title above weather.
       // Create variables and elements for the information we want to display.
       var userInput = citySearched.value.trim();
       var currentCityTitle = document.createElement("h2");
 
       // Ammend information and attributes to the Element.
       // This is adding the users input and Current date (Using moment.js) to the h2 element.
+
       currentCityTitle.textContent = userInput + " " + today;
       // The current weather display title has an id of 'currentTitle'.
       currentCityTitle.setAttribute("id", "currentTitle");
@@ -36,7 +39,35 @@ function getCurrentAndForecast(lat, lon) {
       // Append the Html selector to the variable cityTitle that holds the information.
       weatherDisplay.appendChild(currentCityTitle);
 
-      // Getting Current Date using moment.js, as the API Url I am using does not provide a date.
+      //  Current Weather Display
+
+      // Create, Ammend, Appending all the weather information that needs to be displayed for the user.
+      // Temperature
+      var temperatureData = responseData.current.temp;
+      var currentTemperature = document.createElement("p");
+
+      currentTemperature.textContent = "Temp: " + temperatureData + "°C ";
+      currentTemperature.setAttribute("id", "currentTemp");
+
+      weatherDisplay.appendChild(currentTemperature);
+
+      // Wind
+      var windData = responseData.current.wind_speed;
+      var currentWind = document.createElement("p");
+
+      currentWind.textContent = "Wind: " + windData + " MPH";
+      currentWind.setAttribute("id", "currentWind");
+
+      weatherDisplay.appendChild(currentWind);
+
+      // Humidity
+      var humidityData = responseData.current.humidity;
+      var currentHumidity = document.createElement("p");
+
+      currentHumidity.textContent = "Humidity: " + humidityData + " %";
+      currentHumidity.setAttribute("id", "currentHumidity");
+
+      weatherDisplay.appendChild(currentHumidity);
     });
 }
 

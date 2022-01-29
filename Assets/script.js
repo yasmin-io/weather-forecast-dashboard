@@ -303,10 +303,6 @@ function getWeatherDetails(event) {
   if (citySearched.value) {
     var city = citySearched.value.trim();
 
-    // Save to local Storage Attempt or maybe do a seperate function and call in with param city.
-    //var cityArray = [city];
-    //localStorage.setItem("City:", JSON.stringify(cityArray));
-
     getCityCoordinates(city);
   } else {
     // If the user clicks search without entering a city, they will get an alert pop up.

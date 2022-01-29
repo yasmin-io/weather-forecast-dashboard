@@ -83,7 +83,18 @@ function getCurrentAndForecast(lat, lon) {
 
       // Alter the UV Index Color based on the conditions.
       if (uvData <= 3) {
-        console.log("YAY ITS LOW");
+        currentUv.setAttribute("id", "greenUV");
+      } else if (3 < uvData <= 9) {
+        currentUv.setAttribute("id", "organgeUV");
+      } else {
+        currentUv.setAttribute("id", "redUV");
+      }
+
+      // 5-Day Forecast
+
+      for (i = 1; i < 6; i++) {
+        var newResponseData = responseData.daily[i];
+        console.log(newResponseData);
       }
     });
 }

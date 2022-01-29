@@ -1,3 +1,16 @@
 #currentTitle {
   color: black;
 }
+
+/* Color Coded UV Index Scale Id's*/
+#greenUV {
+  color: green;
+}
+
+#orangeUV {
+  color: orange;
+}
+
+#redUV {
+  color: red;
+}

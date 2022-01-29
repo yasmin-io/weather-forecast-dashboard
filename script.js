@@ -25,6 +25,9 @@ function getCurrentAndForecast(lat, lon) {
       console.log(responseData);
       //  City & Date Display
 
+      // Stating that the innerHTML is blank stops the information from reprinting when you click search.
+      weatherDisplay.innerHTML = "";
+
       // Create variables and elements for the information we want to display.
       var userInput = citySearched.value.trim();
       var currentCityTitle = document.createElement("h2");

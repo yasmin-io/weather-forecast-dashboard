@@ -55,9 +55,13 @@ I didn't get the chance to add emojis in this project unfortunatley. I had actua
 
 I wanted to create a button like background around the UV Index value to color code to the scale. I think it was look alot more appealing and clean.
 
-### Cleaner CSS
+### Cleaner & Finished CSS
 
 You can always improve the visuals of a webpage. I didn't get to use the CSS to the best of my abillity due to a lack of time. This is something I will be coming back to in teh near future.
+
+### Cleaner, More Dynamic Code
+
+Since not having as much time, my code functions, however it is extremely repetitive. I was struggling on finding a loop that worked, so to save time I just repeated my code to get it to correctly function. I want to review and change this code to read alot more efficiently and look alot more professional.
 
 ---
 

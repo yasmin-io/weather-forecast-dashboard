@@ -23,11 +23,11 @@ function getCurrentAndForecast(lat, lon) {
       return response.json();
     })
     .then(function (responseData) {
-      console.log(responseData);
       //  City & Date Display
 
       // Stating that the innerHTML is blank stops the information from reprinting when you click search.
       weatherDisplay.innerHTML = "";
+      forecastDisplay.innerHTML = "";
 
       // Create variables and elements for the information we want to display.
       var userInput = citySearched.value.trim();
@@ -96,7 +96,7 @@ function getCurrentAndForecast(lat, lon) {
 
       // Forecast Display (Date, Temp, Wind, Humidity)
 
-      // First day in the Forecast
+      // First day for the Forecast
       // Using moment, I am going to use the calandar time syntax to show the next day date
       var forecastDateOne = document.createElement("h3");
       var secondDate = moment().add(01, "days").format("L");
@@ -164,6 +164,107 @@ function getCurrentAndForecast(lat, lon) {
       forecastHumidityTwo.setAttribute("id", "forecastHumidity");
 
       forecastDisplay.appendChild(forecastHumidityTwo);
+
+      // Third day for the Forecast
+
+      // Using moment, I am going to use the calandar time syntax to show the day after
+      var forecastDateThird = document.createElement("h3");
+      var fourthDate = moment().add(03, "days").format("L");
+      forecastDateThird.textContent = fourthDate;
+      forecastDisplay.appendChild(forecastDateThird);
+
+      // Temperature
+      var temperatureDataThree = responseData.daily[2].temp.day;
+      var forecastTemperatureThree = document.createElement("p");
+
+      forecastTemperatureThree.textContent =
+        "Temp: " + temperatureDataThree + "°C ";
+
+      forecastDisplay.appendChild(forecastTemperatureThree);
+
+      // Wind
+      var windDataThree = responseData.daily[2].wind_speed;
+      var forecastWindThree = document.createElement("p");
+
+      forecastWindThree.textContent = "Wind: " + windDataThree + " MPH";
+
+      forecastDisplay.appendChild(forecastWindThree);
+
+      // Humidity
+      var humidityDataThree = responseData.daily[2].humidity;
+      var forecastHumidityThree = document.createElement("p");
+
+      forecastHumidityThree.textContent =
+        "Humidity: " + humidityDataThree + " %";
+
+      forecastDisplay.appendChild(forecastHumidityThree);
+
+      // Fourth day for the Forecast
+
+      // Using moment, I am going to use the calandar time syntax to show the day after
+      var forecastDateFourth = document.createElement("h3");
+      var fifthDate = moment().add(04, "days").format("L");
+      forecastDateFourth.textContent = fifthDate;
+      forecastDisplay.appendChild(forecastDateFourth);
+
+      // Temperature
+      var temperatureDataFour = responseData.daily[3].temp.day;
+      var forecastTemperatureFour = document.createElement("p");
+
+      forecastTemperatureFour.textContent =
+        "Temp: " + temperatureDataFour + "°C ";
+
+      forecastDisplay.appendChild(forecastTemperatureFour);
+
+      // Wind
+      var windDataFour = responseData.daily[3].wind_speed;
+      var forecastWindFour = document.createElement("p");
+
+      forecastWindFour.textContent = "Wind: " + windDataFour + " MPH";
+
+      forecastDisplay.appendChild(forecastWindFour);
+
+      // Humidity
+      var humidityDataFour = responseData.daily[3].humidity;
+      var forecastHumidityFour = document.createElement("p");
+
+      forecastHumidityFour.textContent = "Humidity: " + humidityDataFour + " %";
+
+      forecastDisplay.appendChild(forecastHumidityFour);
+
+      // Fifth day for the Forecast
+
+      // Using moment, I am going to use the calandar time syntax to show the day after
+      var forecastDateFifth = document.createElement("h3");
+      var sixthDate = moment().add(05, "days").format("L");
+      forecastDateFifth.textContent = sixthDate;
+      forecastDisplay.appendChild(forecastDateFifth);
+
+      // Temperature
+      var temperatureDataFifth = responseData.daily[4].temp.day;
+      var forecastTemperatureFifth = document.createElement("p");
+
+      forecastTemperatureFifth.textContent =
+        "Temp: " + temperatureDataFifth + "°C ";
+
+      forecastDisplay.appendChild(forecastTemperatureFifth);
+
+      // Wind
+      var windDataFifth = responseData.daily[4].wind_speed;
+      var forecastWindFifth = document.createElement("p");
+
+      forecastWindFifth.textContent = "Wind: " + windDataFifth + " MPH";
+
+      forecastDisplay.appendChild(forecastWindFifth);
+
+      // Humidity
+      var humidityDataFifth = responseData.daily[3].humidity;
+      var forecastHumidityFifth = document.createElement("p");
+
+      forecastHumidityFifth.textContent =
+        "Humidity: " + humidityDataFifth + " %";
+
+      forecastDisplay.appendChild(forecastHumidityFifth);
     });
 }
 
@@ -188,7 +289,6 @@ function getCityCoordinates(city) {
       var lat = responseData.coord.lat;
       var lon = responseData.coord.lon;
 
-      console.log(lat, lon);
       // We are now passing the lat and lon variable information to the next function to get the information needed.
       getCurrentAndForecast(lat, lon);
     });

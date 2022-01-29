@@ -4,6 +4,7 @@ var APIkey = "c337b3a4723bde09488f1f166a5cac8c";
 var searchForm = document.querySelector(".search-form");
 var citySearched = document.querySelector("#city-searched");
 var weatherDisplay = document.querySelector(".today");
+var forecastDisplay = document.querySelector(".forecast");
 
 // Moment.js to display dates as the API url I chose was simpler than others,
 // however didn't provide a date with the return.
@@ -93,12 +94,76 @@ function getCurrentAndForecast(lat, lon) {
         currentUv.setAttribute("id", "redUV");
       }
 
-      // 5-Day Forecast
+      // Forecast Display (Date, Temp, Wind, Humidity)
 
-      for (i = 1; i < 6; i++) {
-        var newResponseData = responseData.daily[i];
-        console.log(newResponseData);
-      }
+      // First day in the Forecast
+      // Using moment, I am going to use the calandar time syntax to show the next day date
+      var forecastDateOne = document.createElement("h3");
+      var secondDate = moment().add(01, "days").format("L");
+      forecastDateOne.textContent = secondDate;
+      forecastDisplay.appendChild(forecastDateOne);
+
+      // Temperature
+      var temperatureDataOne = responseData.daily[0].temp.day;
+      var forecastTemperature = document.createElement("p");
+
+      forecastTemperature.textContent = "Temp: " + temperatureDataOne + "°C ";
+      forecastTemperature.setAttribute("id", "forecastTemp");
+
+      forecastDisplay.appendChild(forecastTemperature);
+
+      // Wind
+      var windDataOne = responseData.daily[0].wind_speed;
+      var forecastWind = document.createElement("p");
+
+      forecastWind.textContent = "Wind: " + windDataOne + " MPH";
+      forecastWind.setAttribute("id", "forecastWind");
+
+      forecastDisplay.appendChild(forecastWind);
+
+      // Humidity
+      var humidityDataOne = responseData.daily[0].humidity;
+      var forecastHumidity = document.createElement("p");
+
+      forecastHumidity.textContent = "Humidity: " + humidityDataOne + " %";
+      forecastHumidity.setAttribute("id", "forecastHumidity");
+
+      forecastDisplay.appendChild(forecastHumidity);
+
+      // Second day for the Forecast
+      // Using moment, I am going to use the calandar time syntax to show the day after
+      var forecastDateTwo = document.createElement("h3");
+      var thirdDate = moment().add(02, "days").format("L");
+      forecastDateTwo.textContent = thirdDate;
+      forecastDisplay.appendChild(forecastDateTwo);
+
+      // Temperature
+      var temperatureDataTwo = responseData.daily[1].temp.day;
+      var forecastTemperatureTwo = document.createElement("p");
+
+      forecastTemperatureTwo.textContent =
+        "Temp: " + temperatureDataTwo + "°C ";
+      forecastTemperatureTwo.setAttribute("id", "forecastTemp");
+
+      forecastDisplay.appendChild(forecastTemperatureTwo);
+
+      // Wind
+      var windDataTwo = responseData.daily[1].wind_speed;
+      var forecastWindTwo = document.createElement("p");
+
+      forecastWindTwo.textContent = "Wind: " + windDataTwo + " MPH";
+      forecastWindTwo.setAttribute("id", "forecastWind");
+
+      forecastDisplay.appendChild(forecastWindTwo);
+
+      //Humidity
+      var humidityDataTwo = responseData.daily[1].humidity;
+      var forecastHumidityTwo = document.createElement("p");
+
+      forecastHumidityTwo.textContent = "Humidity: " + humidityDataTwo + " %";
+      forecastHumidityTwo.setAttribute("id", "forecastHumidity");
+
+      forecastDisplay.appendChild(forecastHumidityTwo);
     });
 }
 

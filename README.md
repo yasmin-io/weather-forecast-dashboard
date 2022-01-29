@@ -4,6 +4,8 @@
 
 I have attempted to builed an application for users to view the weather outlook in multiple cities in the `Great Britain`. In my project, I have tried to achieve this by practicing my use of `Third-party APIs` to access the necessary data and functionality. I have made requests with specific parameters to [OpenWeather](https://openweathermap.org/api) API then using the return to display and update the correct weather information on my website. The way I am building this, I have needed to use [Moment.js](https://momentjs.com/) to display the date, as the data URL I chose to use made it easier to receive daily information, however it dosn't come with a date. This has proven to be a challenging project for me however, it has also allowed me to expand my knowledge in areas I am weak in. I wasn't comfortable with the create, ammend, append process before and after this project, I do feel alot more confident with it now. The most time consuming area for me was trying to come up with the most efficent way to achieve something. I repeated alot of my code for this very reason, I struggled with comming up with a better solution. I pride myself on not over engineering my code, yet I felt like this project was my weakest in that area.
 
+I was unable to finish a full 5 day forecast due to time, I wanted to be able to display what I was able to do despite my time limit this week.
+
 ## Tasks
 
 ---

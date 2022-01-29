@@ -37,7 +37,10 @@ Your search is then added to the search history that you are able to click on an
 
 ## Website
 
-> The website is currently being built and will be available soon. My website will be only accessable through web browser.
+Link to Website:
+Weather Forecast [Dashboard](https://yasmin-io.github.io/weather-forecast-dashboard/)
+
+![WebPage](https://github.com/yasmin-io/weather-forecast-dashboard/blob/ead7b91acfad1784b5d8f72cd865f3aa591cc674/Assets/Images/WebPage.png)
 
 ---
 

@@ -83,10 +83,13 @@ function getCurrentAndForecast(lat, lon) {
 
       // Alter the UV Index Color based on the conditions.
       if (uvData <= 3) {
-        currentUv.setAttribute("id", "greenUV");
+        // If the UV index is below 3,
+        currentUv.setAttribute("id", "greenUV"); // Use the id to add  a green color to the text
       } else if (3 < uvData <= 9) {
-        currentUv.setAttribute("id", "organgeUV");
+        // If the UV index is more than three and or equal to 9,
+        currentUv.setAttribute("id", "organgeUV"); // Add Orange text color
       } else {
+        // Anything more, add a red color.
         currentUv.setAttribute("id", "redUV");
       }
 
@@ -146,7 +149,5 @@ function getWeatherDetails(event) {
   }
 }
 
-//local storage function saveHisory
-//create a button for takes the stuff and trioms and mkaes a button
-
+// The 'Search' Button is waiting for a 'click' to run the function.
 searchForm.addEventListener("submit", getWeatherDetails);

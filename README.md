@@ -2,7 +2,7 @@
 
 ---
 
-I am currently working on building an application for users to view the weather outlook in multiple cities in the `West Midlands`, `United Kingdom`. In my project, I am achieving this by practicing my use of `Third-party APIs` to access the necessary data and functionality. I will be making requests with specific parameters to [OpenWeather](https://openweathermap.org/api) API then using the return to display and update the correct weather information on my website. The way I am building this, I will need to use [Moment.js](https://momentjs.com/) to display the date as the data URL I chose to use made it easier to receive daily information, however it dosn't come with a date. This is a challenging project for me however, it will also allow me to expand my knowledge in areas I am weak in such as: `Local Storage to build a history search list`.
+I have attempted to builed an application for users to view the weather outlook in multiple cities in the `Great Britain`. In my project, I have tried to achieve this by practicing my use of `Third-party APIs` to access the necessary data and functionality. I have made requests with specific parameters to [OpenWeather](https://openweathermap.org/api) API then using the return to display and update the correct weather information on my website. The way I am building this, I have needed to use [Moment.js](https://momentjs.com/) to display the date, as the data URL I chose to use made it easier to receive daily information, however it dosn't come with a date. This has proven to be a challenging project for me however, it has also allowed me to expand my knowledge in areas I am weak in. I wasn't comfortable with the create, ammend, append process before and after this project, I do feel alot more confident with it now. The most time consuming area for me was trying to come up with the most efficent way to achieve something. I repeated alot of my code for this very reason, I struggled with comming up with a better solution. I pride myself on not over engineering my code, yet I felt like this project was my weakest in that area.
 
 ## Tasks
 
@@ -39,9 +39,23 @@ Your search is then added to the search history that you are able to click on an
 
 ---
 
-Future Tests (Bugs & Fixes)
+## Future Tests (Bugs & Fixes)
 
-> There are currently no bugs or corrections that need to be made as the website is under construction.
+### Local Storage
+
+I want to come back to this project and add Local Storgae to all of my work, so that it will persist after refreshing.
+
+### Emoji
+
+I didn't get the chance to add emojis in this project unfortunatley. I had actually understood how to achieve it by using the open weather icons, I wasn't able to follow through with this unfortunatley. I will be working on this in the next update.
+
+### UV Index Color Code
+
+I wanted to create a button like background around the UV Index value to color code to the scale. I think it was look alot more appealing and clean.
+
+### Cleaner CSS
+
+You can always improve the visuals of a webpage. I didn't get to use the CSS to the best of my abillity due to a lack of time. This is something I will be coming back to in teh near future.
 
 ---
 
